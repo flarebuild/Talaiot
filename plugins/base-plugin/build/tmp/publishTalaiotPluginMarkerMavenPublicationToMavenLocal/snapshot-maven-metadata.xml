@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.cdsap.talaiot-base</groupId>
+  <artifactId>com.cdsap.talaiot-base.gradle.plugin</artifactId>
+  <version>1.3.91-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20200625031402</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.3.91-SNAPSHOT</value>
+        <updated>20200625031402</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
