@@ -1,9 +1,9 @@
 package com.cdsap.talaiot.publisher.base
 
-import com.cdsap.base.publisher.entities.ExecutionReport
-import com.cdsap.base.publisher.entities.TaskLength
-import com.cdsap.base.publisher.logger.LogTracker
-import com.cdsap.base.publisher.publisher.Publisher
+import com.cdsap.talaiot.base.Publisher
+import com.cdsap.talaiot.base.entities.ExecutionReport
+import com.cdsap.talaiot.base.entities.TaskLength
+import com.cdsap.talaiot.base.logger.LogTracker
 import java.util.concurrent.TimeUnit
 
 /**

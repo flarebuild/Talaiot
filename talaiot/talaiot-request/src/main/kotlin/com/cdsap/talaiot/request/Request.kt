@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.request
 
-import com.cdsap.base.publisher.logger.LogTracker
+import com.cdsap.talaiot.base.logger.LogTracker
 
 /**
  * Type representing the action to send content to an url

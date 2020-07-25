@@ -1,5 +1,7 @@
 package com.cdsap.talaiot.publisher.pushgateway
 
+import com.cdsap.talaiot.base.configuration.PublisherConfiguration
+
 /**
  * Configuration for the [com.cdsap.talaiot.publisher.PushGatewayPublisher]
  *

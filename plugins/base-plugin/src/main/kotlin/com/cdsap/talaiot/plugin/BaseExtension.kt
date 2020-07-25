@@ -1,7 +1,8 @@
 package com.cdsap.talaiot.plugin
 
-import com.cdsap.base.publisher.PublishersConfiguration
-import com.cdsap.base.publisher.TalaiotExtension
+
+import com.cdsap.talaiot.base.extension.TalaiotExtension
+import com.cdsap.talaiot.base.publisher.PublishersConfiguration
 import groovy.lang.Closure
 import org.gradle.api.Project
 

@@ -1,31 +1,37 @@
 plugins {
-    `java-gradle-plugin`
-    kotlin("jvm") version "1.3.72"
+    id("publisherPlugin")
 }
-
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    api(project(":talaiot:base"))
     implementation("org.influxdb:influxdb-java:2.19")
-    implementation(kotlin("stdlib-jdk8"))
-    implementation("org.influxdb:influxdb-java:2.19")
-    testCompile("junit", "junit", "4.12")
-    testImplementation("org.testcontainers:influxdb:1.11.3")
-
 }
-
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+val instrumentedJars by configurations.creating {
+    isCanBeConsumed = true
+    isCanBeResolved = false
 }
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+group = "com.cdsap.talaiot.publisher"
+version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
+
+
+
+
+publishing {
+    repositories {
+        maven {
+            name = "Snapshots"
+            url = uri("http://oss.jfrog.org/artifactory/oss-snapshot-local")
+
+            credentials {
+                username = System.getenv("USERNAME_SNAPSHOT")
+                password = System.getenv("PASSWORD_SNAPSHOT")
+            }
+        }
     }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cdsap.talaiot.publisher"
+            artifactId = "influxdb-publisher"
+            version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
+            from(components["kotlin"])
+        }
     }
 }

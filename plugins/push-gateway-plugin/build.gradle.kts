@@ -1,27 +1,38 @@
 plugins {
-    java
-    kotlin("jvm") version "1.3.72"
+    id("talaiotPlugin")
 }
-
-version = "unspecified"
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    testCompile("junit", "junit", "4.12")
+    implementation(project(":publishers:push-gateway-publisher"))
 }
 
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-}
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+gradlePlugin {
+    plugins {
+        register("TalaiotPushGateway") {
+            id = "com.cdsap.talaiot.plugins.pushgateway"
+            implementationClass = "com.cdsap.talaiot.plugin.TalaiotPushGatewayPlugin"
+        }
     }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+}
+
+pluginBundle {
+    (plugins) {
+        ("TalaiotPushGateway") {
+            displayName = "PushGatewayPlugin"
+            description =
+                "Simple and extensible plugin to track task and build times in your Gradle Project."
+            tags = listOf("tracking", "kotlin", "gradle")
+            version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
+        }
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cdsap.talaiot.plugin"
+            artifactId = "push-gateway-plugin"
+            version = "0.0.8"
+            from(components["kotlin"])
+        }
     }
 }

@@ -1,7 +1,7 @@
 package com.cdsap.talaiot.plugin
 
-import com.cdsap.base.publisher.PublishersConfiguration
-import com.cdsap.base.publisher.publisher.Publisher
+import com.cdsap.talaiot.base.Publisher
+import com.cdsap.talaiot.base.publisher.PublishersConfiguration
 import com.cdsap.talaiot.publisher.base.OutputPublisherConfiguration
 import groovy.lang.Closure
 import org.gradle.api.Project
@@ -38,15 +38,4 @@ class BaseConfiguration(project: Project) : PublishersConfiguration(project) {
         closure.delegate = outputPublisher
         closure.call()
     }
-
-    /**
-     * Adds the given custom publishers into the publisher list.
-     *
-     * @param publishers takes N [Publisher]s to be added to the publishers list.
-     */
-    fun customPublishers(vararg publishers: Publisher) {
-        customPublishers.addAll(publishers)
-    }
-
-
 }

@@ -13,7 +13,9 @@ repositories {
 dependencies {
     implementation("com.github.oshi:oshi-core:3.13.3")
     implementation(kotlin("stdlib-jdk8"))
-    testCompile("junit", "junit", "4.12")
+    testImplementation("junit", "junit", "4.12")
+    testImplementation( "io.kotlintest:kotlintest-runner-junit5:3.3.2")
+
     testImplementation("org.testcontainers:testcontainers:1.11.3")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1")
 
@@ -32,7 +34,22 @@ tasks {
 }
 
 
-version = com.talaiot.ver.Versions.version
+    tasks.withType<JacocoReport> {
+    reports {
+        xml.isEnabled = true
+        csv.isEnabled = true
+        html.isEnabled = true
+        html.destination = File("reports/coverage")
+    }
+}
+
+apply {
+    val test by tasks.getting(Test::class) {
+        useJUnitPlatform { }
+    }
+}
+
+version = "0.0.7"
 
 publishing {
     repositories {
@@ -50,11 +67,8 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.cdsap.talaiot"
             artifactId = "base"
-            version = com.talaiot.ver.Versions.version
+            version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
             from(components["kotlin"])
-            // from(components["java"])
-            //      artifact(sourcesJar.source)
-
         }
     }
 }

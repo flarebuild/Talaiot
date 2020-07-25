@@ -1,5 +1,5 @@
 import com.cdsap.talaiot.entities.ExecutionReport
-import com.cdsap.talaiot.logger.LogTracker
+import com.cdsap.talaiot.base.logger.LogTracker
 import com.cdsap.talaiot.metrics.HostnameMetric
 import com.cdsap.talaiot.metrics.SimpleMetric
 import com.cdsap.talaiot.publisher.Publisher

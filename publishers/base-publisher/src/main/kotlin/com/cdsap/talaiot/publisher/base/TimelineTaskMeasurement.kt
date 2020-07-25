@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.publisher.base
 
-import com.cdsap.base.publisher.entities.TaskMessageState
+import com.cdsap.talaiot.base.entities.TaskMessageState
 
 data class TimelineTaskMeasurement(
     val taskPath: String,

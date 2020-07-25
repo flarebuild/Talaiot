@@ -1,53 +1,41 @@
-val versionTalaiot = com.talaiot.ver.Versions.version
-
 plugins {
-    "talaiotPlugin"
-  //  `java-gradle-plugin`
-  //  `maven-publish`
-  //  `kotlin-dsl`
+    id("talaiotPlugin")
+}
+
+dependencies {
+    implementation(project(":publishers:base-publisher"))
 }
 
 
-//jacoco {
-//    toolVersion = "0.8.3"
-//}
+gradlePlugin {
+    plugins {
+        register("TalaiotBase") {
+            id = "com.cdsap.talaiot.plugins.base"
+            implementationClass = "com.cdsap.talaiot.plugin.TalaiotBasePlugin"
+        }
+    }
 
+}
 
+pluginBundle {
+    (plugins) {
+        ("TalaiotBase") {
+            displayName = "BasePlugin"
+            description =
+                "Simple and extensible plugin to track task and build times in your Gradle Project."
+            tags = listOf("tracking", "kotlin", "gradle")
+            version = com.talaiot.buildplugins.Versions.TALAIOT_VERSION
+        }
+    }
+}
 
-//publishing {
-//    repositories {
-//        maven {
-//            name = "Snapshots"
-//            url = uri("http://oss.jfrog.org/artifactory/oss-snapshot-local")
-//
-//            credentials {
-//                username = System.getenv("USERNAME_SNAPSHOT")
-//                password = System.getenv("PASSWORD_SNAPSHOT")
-//            }
-//        }
-//    }
-//    publications {
-//        create<MavenPublication>("maven") {
-//            groupId = "com.cdsap"
-//            artifactId = "base"
-//            version = versionTalaiot
-//            from(components["kotlin"])
-//            // from(components["java"])
-//            //      artifact(sourcesJar.source)
-//
-//        }
-//    }
-//}
-//
-//val test by tasks.getting(Test::class) {
-//    useJUnitPlatform { }
-//}
-//
-//tasks.jacocoTestReport {
-//    reports {
-//        xml.isEnabled = true
-//        csv.isEnabled = true
-//        html.isEnabled = true
-//        html.destination = file("$buildDir/reports/coverage")
-//    }
-//}
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cdsap.talaiot.plugin"
+            artifactId = "base-plugin"
+            version = "0.0.8"
+            from(components["kotlin"])
+        }
+    }
+}

@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.publisher.base
 
-import com.cdsap.base.publisher.configuration.PublisherConfiguration
+import com.cdsap.talaiot.base.configuration.PublisherConfiguration
 
 /**
  * Configuration for the OutputPublisher

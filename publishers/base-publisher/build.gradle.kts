@@ -1,30 +1,9 @@
 plugins {
-    `java-library`
-    `maven-publish`
-    kotlin("jvm")
-}
-
-repositories {
-    mavenCentral()
+    id("publisherPlugin")
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    api(project(":talaiot:base"))
     implementation("com.google.code.gson:gson:2.8.5")
-    testCompile("junit", "junit", "4.12")
-}
-
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-}
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
 }
 
 val instrumentedJars by configurations.creating {
@@ -33,8 +12,9 @@ val instrumentedJars by configurations.creating {
 }
 
 group = "com.cdsap.talaiot.publisher"
+version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
 
-version = com.talaiot.ver.Versions.version
+
 publishing {
     repositories {
         maven {
@@ -51,11 +31,8 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.cdsap.talaiot.publisher"
             artifactId = "base-publisher"
-            version = com.talaiot.ver.Versions.version
+            version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
             from(components["kotlin"])
-            // from(components["java"])
-            //      artifact(sourcesJar.source)
-
         }
     }
 }

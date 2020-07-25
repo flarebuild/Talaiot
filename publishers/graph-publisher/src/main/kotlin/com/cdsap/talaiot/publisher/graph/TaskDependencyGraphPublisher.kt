@@ -1,8 +1,8 @@
 package com.cdsap.talaiot.publisher.graph
 
-import com.cdsap.base.publisher.publisher.Publisher
-import com.cdsap.talaiot.entities.ExecutionReport
-import com.cdsap.talaiot.logger.LogTracker
+import com.cdsap.talaiot.base.Publisher
+import com.cdsap.talaiot.base.entities.ExecutionReport
+import com.cdsap.talaiot.base.logger.LogTracker
 import com.cdsap.talaiot.publisher.graph.writer.DotWriter
 import com.cdsap.talaiot.publisher.graph.writer.TaskGraphWriter
 import java.util.concurrent.Executor

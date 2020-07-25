@@ -1,11 +1,11 @@
 package com.cdsap.talaiot.publisher.graph
 
-import com.cdsap.talaiot.entities.ExecutionReport
-import com.cdsap.talaiot.entities.TaskMessageState
-import com.cdsap.talaiot.logger.LogTracker
+import com.cdsap.talaiot.base.entities.ExecutionReport
+import com.cdsap.talaiot.base.entities.TaskMessageState
+import com.cdsap.talaiot.base.logger.LogTracker
 import com.cdsap.talaiot.publisher.graph.resources.ResourcesHtml
 import com.cdsap.talaiot.publisher.graph.resources.ResourcesHtml.LEGEND_HEADER
-import com.cdsap.talaiot.writer.FileWriter
+import com.cdsap.talaiot.publisher.graph.writer.FileWriter
 import java.util.concurrent.Executor
 
 /**

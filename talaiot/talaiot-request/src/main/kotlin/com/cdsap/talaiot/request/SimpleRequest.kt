@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.request
 
-import com.cdsap.base.publisher.logger.LogTracker
+import com.cdsap.talaiot.base.logger.LogTracker
 import io.github.rybalkinsd.kohttp.dsl.httpPost
 import io.github.rybalkinsd.kohttp.ext.url
 import java.net.URL
@@ -30,13 +30,13 @@ class SimpleRequest(mode: LogTracker) : Request {
                     string(content)
                 }
             }.also {
-                logTracker.log(TAG, "Response code ${it.code}")
-                if (!it.isSuccessful) {
-                    logTracker.log(TAG, "Response code not Successful")
-                    logTracker.log(TAG, "Message Response ${it.message}")
-                    logTracker.log(TAG, "Response Body ${it.body?.string()}")
-
-                }
+//                logTracker.log(TAG, "Response code ${it.code}")
+//                if (!it.isSuccessful) {
+//                    logTracker.log(TAG, "Response code not Successful")
+//                    logTracker.log(TAG, "Message Response ${it.message}")
+//                    logTracker.log(TAG, "Response Body ${it.body?.string()}")
+//
+//                }
 
             }
         } catch (e: Exception) {

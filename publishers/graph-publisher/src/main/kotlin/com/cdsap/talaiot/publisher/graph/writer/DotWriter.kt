@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.publisher.graph.writer
 
-import com.cdsap.talaiot.logger.LogTracker
+import com.cdsap.talaiot.base.logger.LogTracker
 import com.cdsap.talaiot.publisher.graph.writer.FileWriter.Companion.TALAIOT_OUTPUT_DIR
 import guru.nidi.graphviz.engine.Renderer
 import org.gradle.api.Project

@@ -1,6 +1,7 @@
 package com.cdsap.talaiot.publisher.graph
 
-import com.cdsap.talaiot.configuration.IgnoreWhenConfiguration
+import com.cdsap.talaiot.base.configuration.IgnoreWhenConfiguration
+import com.cdsap.talaiot.base.configuration.PublisherConfiguration
 import groovy.lang.Closure
 import org.gradle.api.Project
 
@@ -16,10 +17,11 @@ import org.gradle.api.Project
  *    }
  * }
  */
-class TaskDependencyGraphConfiguration(val project: Project) {
-    /**
-     * Configuration for the ignoreWhen property.
-     */
+class TaskDependencyGraphConfiguration(val project: Project) : PublisherConfiguration {
+    override var name: String = "output"
+    override var publishBuildMetrics: Boolean = true
+    override var publishTaskMetrics: Boolean = true
+
     var ignoreWhen: IgnoreWhenConfiguration? = null
     /**
      * Flag to enable [com.cdsap.talaiot.publisher.graphpublisher.GexfPublisher]

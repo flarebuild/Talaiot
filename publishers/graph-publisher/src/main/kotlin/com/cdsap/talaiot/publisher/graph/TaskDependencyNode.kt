@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.publisher.graph
 
-import com.cdsap.talaiot.entities.TaskLength
+import com.cdsap.talaiot.base.entities.TaskLength
 
 /**
  *  Wrapper of [TaskLength], adding an [Int] to be identified in a HashTables

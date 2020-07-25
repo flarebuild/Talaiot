@@ -1,9 +1,8 @@
 package com.cdsap.talaiot.publisher.graph
 
-import com.cdsap.base.publisher.publisher.Publisher
-import com.cdsap.talaiot.logger.LogTracker
-import com.cdsap.talaiot.writer.FileWriter
-
+import com.cdsap.talaiot.base.Publisher
+import com.cdsap.talaiot.base.logger.LogTracker
+import com.cdsap.talaiot.publisher.graph.writer.FileWriter
 
 /**
  * Extension of Publisher interface with a FileWriter implementation to write on disk

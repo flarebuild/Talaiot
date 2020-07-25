@@ -3,7 +3,7 @@ plugins {
     kotlin("jvm")
 }
 
-version = "unspecified"
+version = "0.0.7"
 
 repositories {
     mavenCentral()
@@ -11,7 +11,6 @@ repositories {
 
 dependencies {
     api(project(":talaiot:base"))
-  //  implementation(project("talaiot:talaiot-base"))
     implementation("io.github.rybalkinsd:kohttp:0.10.0")
     implementation(kotlin("stdlib-jdk8"))
     testCompile("junit", "junit", "4.12")

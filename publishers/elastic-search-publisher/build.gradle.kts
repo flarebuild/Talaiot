@@ -1,31 +1,33 @@
 plugins {
-    java
-    kotlin("jvm") version "1.3.72"
-}
-
-version = "unspecified"
-
-repositories {
-    mavenCentral()
+    id("publisherPlugin")
 }
 
 dependencies {
-    api(project(":talaiot:base"))
     implementation("org.elasticsearch.client:elasticsearch-rest-high-level-client:7.3.0")
     testImplementation("org.testcontainers:elasticsearch:1.12.0")
-
-    implementation(kotlin("stdlib-jdk8"))
-    testCompile("junit", "junit", "4.12")
+    testImplementation("com.google.code.gson:gson:2.8.5")
 }
+group = "com.cdsap.talaiot.publisher"
+version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
 
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-}
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+publishing {
+    repositories {
+        maven {
+            name = "Snapshots"
+            url = uri("http://oss.jfrog.org/artifactory/oss-snapshot-local")
+
+            credentials {
+                username = System.getenv("USERNAME_SNAPSHOT")
+                password = System.getenv("PASSWORD_SNAPSHOT")
+            }
+        }
     }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.cdsap.talaiot.publisher"
+            artifactId = "elasticesearch-publisher"
+            version =  com.talaiot.buildplugins.Versions.TALAIOT_VERSION
+            from(components["kotlin"])
+        }
     }
 }

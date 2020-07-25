@@ -1,7 +1,6 @@
 plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
-    //id("com.gradle.plugin-publish").version("0.12.0")
 }
 
 repositories {
@@ -17,7 +16,6 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
     implementation("com.gradle.publish:plugin-publish-plugin:0.12.0")
-
     testImplementation("junit:junit:4.12")
 }
 
@@ -25,7 +23,11 @@ gradlePlugin {
     plugins {
         register("PluginTalaiot") {
             id = "talaiotPlugin"
-            implementationClass = "com.talaiot.ver.plugin.entrypoint.ReporterPlugin"
+            implementationClass = "com.talaiot.buildplugins.BasePlugin"
+        }
+        register("PluginPublisher") {
+            id = "publisherPlugin"
+            implementationClass = "com.talaiot.buildplugins.PublisherPlugin"
         }
     }
 }

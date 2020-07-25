@@ -1,9 +1,10 @@
 package com.cdsap.talaiot.publisher.elasticsearch
 
-import com.cdsap.base.publisher.publisher.Publisher
-import com.cdsap.talaiot.entities.ExecutionReport
-import com.cdsap.talaiot.logger.LogTracker
-import com.cdsap.talaiot.metrics.DefaultBuildMetricsProvider
+
+import com.cdsap.talaiot.base.Publisher
+import com.cdsap.talaiot.base.entities.ExecutionReport
+import com.cdsap.talaiot.base.logger.LogTracker
+import com.cdsap.talaiot.base.metrics.DefaultBuildMetricsProvider
 import com.cdsap.talaiot.metrics.DefaultTaskDataProvider
 import org.apache.http.HttpHost
 import org.elasticsearch.action.index.IndexRequest

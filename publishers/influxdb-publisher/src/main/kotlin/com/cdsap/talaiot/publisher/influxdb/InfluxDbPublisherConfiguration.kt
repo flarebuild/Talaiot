@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.publisher.influxdb
 
-import com.cdsap.talaiot.configuration.PublisherConfiguration
+import com.cdsap.talaiot.base.configuration.PublisherConfiguration
 import groovy.lang.Closure
 
 /**
