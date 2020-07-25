@@ -19,3 +19,4 @@ talaiot/out/**
 .externalNativeBuild
 .kotlintest
 /talaiot/base/build
+/build
