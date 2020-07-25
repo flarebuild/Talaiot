@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cdsap.talaiot.publisher.rethinkdb.RethinkDbPublisherConfigurationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-20T16:36:28" hostname="inakivillar" time="0.012">
-  <properties/>
-  <testcase name="Then: Publish tasks and build by default" classname="com.cdsap.talaiot.publisher.rethinkdb.RethinkDbPublisherConfigurationTest" time="0.012"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
