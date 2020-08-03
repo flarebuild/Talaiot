@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cdsap.talaiot.base.e2e.DefaultConfigurationSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-03T01:58:19" hostname="inakivillar" time="128.155">
+  <properties/>
+  <testcase name="given default config" classname="com.cdsap.talaiot.base.e2e.DefaultConfigurationSpec" time="128.155"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

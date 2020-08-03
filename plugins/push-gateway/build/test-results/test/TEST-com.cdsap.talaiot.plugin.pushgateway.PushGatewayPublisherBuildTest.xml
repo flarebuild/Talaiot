@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.cdsap.talaiot.plugin.pushgateway.PushGatewayPublisherBuildTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-08-03T01:50:35" hostname="inakivillar" time="0.024">
+  <properties/>
+  <testcase name="Then: logs are shown in the output and including the pushGateway format" classname="com.cdsap.talaiot.plugin.pushgateway.PushGatewayPublisherBuildTest" time="0.024"/>
+  <system-out><![CDATA[
+> Configure project :
+1
+2
+#
+
+> Task :compileJava NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :jar
+> Task :assemble
+[PushGatewayPublisher]: ================
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.4.1/userguide/command_line_interface.html#sec:command_line_warnings
+[PushGatewayPublisher]: publishBuildMetrics: true
+
+[PushGatewayPublisher]: publishTaskMetrics: true
+[PushGatewayPublisher]: ================
+BUILD SUCCESSFUL in 7s
+1 actionable task: 1 executed
+[PushGatewayPublisher]: Inserting PushGateway Task metrics
+[PushGatewayPublisher]: url: http://localhost:9091/metrics/job/tracking
+[PushGatewayPublisher]: content: :compileJava{state="NO_SOURCE",module="no_module",rootNode="false",task=":compileJava",workerId="root.1.3",critical="false",value="32",cacheEnabled="false",localCacheHit="false",localCacheMiss="false",remoteCacheHit="false",remoteCacheMiss="false"} 32
+:processResources{state="NO_SOURCE",module="no_module",rootNode="false",task=":processResources",workerId="root.1.3",critical="true",value="1",cacheEnabled="false",localCacheHit="false",localCacheMiss="false",remoteCacheHit="false",remoteCacheMiss="false"} 1
+:classes{state="UP_TO_DATE",module="no_module",rootNode="false",task=":classes",workerId="root.1.3",critical="true",value="1",cacheEnabled="false",localCacheHit="false",localCacheMiss="false",remoteCacheHit="false",remoteCacheMiss="false"} 1
+:jar{state="EXECUTED",module="no_module",rootNode="false",task=":jar",workerId="root.1.3",critical="true",value="68",cacheEnabled="false",localCacheHit="false",localCacheMiss="false",remoteCacheHit="false",remoteCacheMiss="false"} 68
+:assemble{state="EXECUTED",module="no_module",rootNode="true",task=":assemble",workerId="root.1.3",critical="true",value="146",cacheEnabled="false",localCacheHit="false",localCacheMiss="false",remoteCacheHit="false",remoteCacheMiss="false"} 146
+
+[SimpleRequest]: send request to http://localhost:9091/metrics/job/tracking
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

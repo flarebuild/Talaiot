@@ -1,0 +1,17 @@
+package com.cdsap.talaiot.plugin.rethinkdb
+
+import com.cdsap.talaiot.base.Talaiot
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+class TalaiotRethinkDbPlugin : Plugin<Project> {
+
+    override fun apply(target: Project) {
+        Talaiot(
+            RethinkDbExtension::class.java,
+            RethinkDbConfigurationProvider(
+                target
+            )
+        ).setUpPlugin(target)
+    }
+}

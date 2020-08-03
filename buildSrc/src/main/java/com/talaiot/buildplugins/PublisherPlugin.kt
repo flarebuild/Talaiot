@@ -34,7 +34,7 @@ class PublisherPlugin : Plugin<Project> {
             add("testImplementation", "junit:junit:4.12")
             add("testImplementation", "io.kotlintest:kotlintest-runner-junit5:3.3.2")
             add("testImplementation", "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1")
-            add("testImplementation", project(":test-utils"))
+            add("testImplementation", project(":talaiot:test-utils"))
         }
 
 
