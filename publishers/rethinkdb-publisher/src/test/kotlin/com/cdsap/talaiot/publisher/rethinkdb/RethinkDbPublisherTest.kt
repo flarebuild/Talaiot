@@ -2,6 +2,7 @@ package com.cdsap.talaiot.publisher.rethinkdb
 
 import com.cdsap.talaiot.base.entities.*
 import com.cdsap.talaiot.utils.ExecutionReportProvider
+import com.cdsap.talaiot.utils.KRethinkDbContainer
 import com.cdsap.talaiot.utils.TestExecutor
 import com.cdsap.talaiot.utils.TestLogTrackerRecorder
 import com.rethinkdb.RethinkDB

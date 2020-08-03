@@ -1,18 +1,24 @@
 package com.talaiot.buildplugins
 
-import com.gradle.publish.PluginBundleExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.publish.PublishingExtension
+import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.*
-import org.gradle.plugin.devel.GradlePluginDevelopmentExtension
 import org.gradle.testing.jacoco.tasks.JacocoReport
 import java.io.File
+import java.net.URI
 
 
 class PublisherPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
+
+        target
+            .extensions
+            .create<PublisherExtension>("publisher")
+
         target.plugins.apply("maven-publish")
         target.plugins.apply("kotlin")
         target.plugins.apply("jacoco")
@@ -31,12 +37,13 @@ class PublisherPlugin : Plugin<Project> {
             add("testImplementation", project(":test-utils"))
         }
 
+
         target.tasks.withType<JacocoReport> {
             reports {
                 xml.isEnabled = true
                 csv.isEnabled = true
                 html.isEnabled = true
-                html.destination = File("reports/coverage")
+                html.destination = File("${target.rootProject.buildDir}/coverage")
             }
         }
 
@@ -45,5 +52,41 @@ class PublisherPlugin : Plugin<Project> {
                 useJUnitPlatform { }
             }
         }
+
+        val instrumentedJars by target.configurations.creating {
+            isCanBeConsumed = true
+            isCanBeResolved = false
+        }
+
+        target.group = "com.cdsap.talaiot.publisher"
+        target.version =  Versions.TALAIOT_VERSION
+
+        target.afterEvaluate {
+            collectUnitTest()
+            target.configure<PublishingExtension> {
+                repositories {
+                    maven {
+                        name = "Snapshots"
+                        url = URI("http://oss.jfrog.org/artifactory/oss-snapshot-local")
+
+                        credentials {
+                            username = System.getenv("USERNAME_SNAPSHOT")
+                            password = System.getenv("PASSWORD_SNAPSHOT")
+                        }
+                    }
+                }
+                publications {
+                    create<MavenPublication>("maven") {
+                        val extension = target.extensions.getByType<PublisherExtension>()
+                        groupId = target.group.toString()
+                        version =  target.name
+                        artifactId = extension.name
+                        from(components["kotlin"])
+                    }
+                }
+            }
+
+        }
+
     }
 }

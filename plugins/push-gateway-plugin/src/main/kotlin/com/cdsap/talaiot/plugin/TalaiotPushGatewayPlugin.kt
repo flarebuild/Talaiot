@@ -15,3 +15,4 @@ class TalaiotPushGatewayPlugin : Plugin<Project> {
         ).setUpPlugin(target)
     }
 }
+g

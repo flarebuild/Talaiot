@@ -15,7 +15,7 @@ class NoOutputsBuildTest : BehaviorSpec({
                 """
                    plugins {
                       id 'java'
-                      id 'com.cdsap.talaiot.plugins.base'
+                      id 'com.cdsap.talaiot.plugin.base'
                    }
 
                   talaiot{

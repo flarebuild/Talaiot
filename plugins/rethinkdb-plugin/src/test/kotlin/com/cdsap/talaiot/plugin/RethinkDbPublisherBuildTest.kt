@@ -14,7 +14,7 @@ class RethinkDbPublisherBuildTest : BehaviorSpec({
                 """
                    plugins {
                       id 'java'
-                      id 'com.cdsap.talaiot.plugins.rethinkdb'
+                      id 'com.cdsap.talaiot.rethinkdb-plugin'
                    }
 
                   talaiot{

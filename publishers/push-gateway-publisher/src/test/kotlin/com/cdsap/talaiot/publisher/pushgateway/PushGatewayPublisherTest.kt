@@ -1,13 +1,13 @@
 package com.cdsap.talaiot.publisher.pushgateway
 
-import com.cdsap.talaiot.configuration.PushGatewayPublisherConfiguration
-import com.cdsap.talaiot.entities.*
 
-import com.cdsap.talaiot.logger.TestLogTrackerRecorder
+import com.cdsap.talaiot.base.entities.*
 import com.cdsap.talaiot.publisher.pushgateway.PushGatewayFormatter
 import com.cdsap.talaiot.publisher.pushgateway.PushGatewayPublisher
-import com.cdsap.talaiot.report.ExecutionReportProvider
 import com.cdsap.talaiot.request.SimpleRequest
+import com.cdsap.talaiot.utils.ExecutionReportProvider
+import com.cdsap.talaiot.utils.TestExecutor
+import com.cdsap.talaiot.utils.TestLogTrackerRecorder
 import io.github.rybalkinsd.kohttp.dsl.httpGet
 import io.github.rybalkinsd.kohttp.ext.url
 import io.kotlintest.Spec
@@ -62,7 +62,7 @@ class PushGatewayPublisherTest : BehaviorSpec() {
                             }
                         }
                     }
-                    val content = a.body?.string()
+                    val content = a.body()?.string()
                     assert(
                         content?.contains(":app:assemble{cacheEnabled=\"false\",critical=\"false\",instance=\"\",job=\"task\",localCacheHit=\"false\",localCacheMiss=\"false\",metric1=\"value1\",metric2=\"value2\",module=\"app\",remoteCacheHit=\"false\",remoteCacheMiss=\"false\",rootNode=\"false\",state=\"EXECUTED\",task=\":app:assemble\",value=\"100\",workerId=\"\"} 100")
                             ?: false
@@ -106,7 +106,7 @@ class PushGatewayPublisherTest : BehaviorSpec() {
                             }
                         }
                     }
-                    val content = a.body?.string()
+                    val content = a.body()?.string()
 
                     assert(
                         content?.contains(":app:assemble{cacheEnabled=\"false\",critical=\"false\",instance=\"\",job=\"task2\",localCacheHit=\"false\",localCacheMiss=\"false\",metric1=\"value1\",metric2=\"value2\",module=\"app\",remoteCacheHit=\"false\",remoteCacheMiss=\"false\",rootNode=\"false\",state=\"EXECUTED\",task=\":app:assemble\",value=\"100\",workerId=\"\"} 100")
@@ -152,7 +152,7 @@ class PushGatewayPublisherTest : BehaviorSpec() {
                             }
                         }
                     }
-                    val content = a.body?.string()
+                    val content = a.body()?.string()
 
                     assert(
                         content?.contains("build3")
@@ -191,7 +191,7 @@ class PushGatewayPublisherTest : BehaviorSpec() {
                             }
                         }
                     }
-                    val content = a.body?.string()
+                    val content = a.body()?.string()
 
 
                     content?.contains("metric1=\"value1\",metric2=\"value2\",module=\":test-module\",rootNode=\"false\",state=\"EXECUTED\",task=\":test-module:clean\",value=\"1\",workerId=\"\"} 100")

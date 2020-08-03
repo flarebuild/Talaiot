@@ -14,7 +14,7 @@ class InfluxDbPublisherNotProperlyDefinedBuildTest : BehaviorSpec({
                 """
                    plugins {
                       id 'java'
-                      id 'com.cdsap.talaiot.plugins.influxdb'
+                      id 'com.cdsap.talaiot.influxdb-plugin'
                    }
 
                   talaiot{
@@ -44,7 +44,7 @@ class InfluxDbPublisherNotProperlyDefinedBuildTest : BehaviorSpec({
                 """
                    plugins {
                       id 'java'
-                      id 'com.cdsap.talaiot.plugins.influxdb'
+                      id 'com.cdsap.talaiot.influxdb-plugin'
                    }
 
                   talaiot{
@@ -74,7 +74,7 @@ class InfluxDbPublisherNotProperlyDefinedBuildTest : BehaviorSpec({
                 """
                    plugins {
                       id 'java'
-                      id 'com.cdsap.talaiot.plugins.influxdb'
+                      id 'com.cdsap.talaiot.influxdb-plugin'
                    }
 
                   talaiot{

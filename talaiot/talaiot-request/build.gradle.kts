@@ -1,3 +1,5 @@
+import com.talaiot.buildplugins.collectUnitTest
+
 plugins {
     java
     kotlin("jvm")
@@ -8,6 +10,8 @@ version = "0.0.7"
 repositories {
     mavenCentral()
 }
+collectUnitTest()
+
 
 dependencies {
     api(project(":talaiot:base"))

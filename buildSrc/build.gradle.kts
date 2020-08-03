@@ -23,7 +23,7 @@ gradlePlugin {
     plugins {
         register("PluginTalaiot") {
             id = "talaiotPlugin"
-            implementationClass = "com.talaiot.buildplugins.BasePlugin"
+            implementationClass = "com.talaiot.buildplugins.TalaiotPlugin"
         }
         register("PluginPublisher") {
             id = "publisherPlugin"

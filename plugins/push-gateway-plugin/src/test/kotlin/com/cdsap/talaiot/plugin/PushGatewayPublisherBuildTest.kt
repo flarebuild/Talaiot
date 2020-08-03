@@ -15,7 +15,7 @@ class PushGatewayPublisherBuildTest : BehaviorSpec({
                 """
                    plugins {
                       id 'java'
-                      id 'com.cdsap.talaiot.plugins.pushgateway'
+                      id 'com.cdsap.talaiot.pushgateway-plugin'
                    }
 
                   talaiot{

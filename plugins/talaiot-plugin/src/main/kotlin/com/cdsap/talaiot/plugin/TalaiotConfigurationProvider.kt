@@ -1,6 +1,5 @@
 package com.cdsap.talaiot.plugin
 import com.cdsap.talaiot.base.Publisher
-import com.cdsap.talaiot.base.extension.TalaiotExtension
 import com.cdsap.talaiot.base.logger.LogTrackerImpl
 import com.cdsap.talaiot.base.provider.PublisherConfigurationProvider
 import com.cdsap.talaiot.publisher.base.JsonPublisher
@@ -23,7 +22,7 @@ class TalaiotConfigurationProvider(
 ) : PublisherConfigurationProvider {
     override fun get(): List<Publisher> {
         val publishers = mutableListOf<Publisher>()
-        val talaiotExtension = project.extensions.getByName("talaiot") as TalaiotFatExtensionPlugin
+        val talaiotExtension = project.extensions.getByName("talaiot") as TalaiotPluginExtension
         val logger = LogTrackerImpl(talaiotExtension.logger)
         val executor = Executors.newSingleThreadExecutor()
         val heavyExecutor = Executors.newSingleThreadExecutor()
