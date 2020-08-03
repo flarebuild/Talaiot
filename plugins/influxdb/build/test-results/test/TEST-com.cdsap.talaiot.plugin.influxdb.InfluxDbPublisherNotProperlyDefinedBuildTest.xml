@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cdsap.talaiot.plugin.influxdb.InfluxDbPublisherNotProperlyDefinedBuildTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-08-03T01:50:21" hostname="inakivillar" time="0.016">
-  <properties/>
-  <testcase name="Then: logs displays the InfluxDbPublisher error" classname="com.cdsap.talaiot.plugin.influxdb.InfluxDbPublisherNotProperlyDefinedBuildTest" time="0.015"/>
-  <testcase name="Then: logs displays the InfluxDbPublisher error" classname="com.cdsap.talaiot.plugin.influxdb.InfluxDbPublisherNotProperlyDefinedBuildTest" time="0.623"/>
-  <testcase name="Then: no error shown because using default values" classname="com.cdsap.talaiot.plugin.influxdb.InfluxDbPublisherNotProperlyDefinedBuildTest" time="0.301"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
