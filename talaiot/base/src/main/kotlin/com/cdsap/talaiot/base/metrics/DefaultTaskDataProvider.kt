@@ -1,6 +1,5 @@
-package com.cdsap.talaiot.metrics
+package com.cdsap.talaiot.base.metrics
 
-import com.cdsap.talaiot.base.metrics.ValuesProvider
 import com.cdsap.talaiot.base.entities.ExecutionReport
 import com.cdsap.talaiot.base.entities.TaskLength
 

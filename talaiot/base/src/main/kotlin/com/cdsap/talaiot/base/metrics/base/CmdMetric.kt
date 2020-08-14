@@ -1,7 +1,7 @@
-package com.cdsap.talaiot.metrics.base
+package com.cdsap.talaiot.base.metrics.base
 
 import com.cdsap.talaiot.base.entities.ExecutionReport
-import com.cdsap.talaiot.metrics.SimpleMetric
+import com.cdsap.talaiot.base.metrics.SimpleMetric
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.lang.IllegalStateException

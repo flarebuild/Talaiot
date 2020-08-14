@@ -1,5 +1,5 @@
 package com.talaiot.buildplugins
 
 object Versions {
-    const val TALAIOT_VERSION = "0.0.1"
+    const val TALAIOT_VERSION = "1.4.0-SNAPSHOT"
 }

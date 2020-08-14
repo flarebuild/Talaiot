@@ -3,10 +3,10 @@ package com.cdsap.talaiot.base.provider
 import com.cdsap.talaiot.base.extension.TalaiotExtension
 import com.cdsap.talaiot.base.entities.ExecutedTasksInfo
 import com.cdsap.talaiot.base.entities.ExecutionReport
-import com.cdsap.talaiot.metrics.SimpleMetric
-import com.cdsap.talaiot.metrics.base.BuildResultMetric
-import com.cdsap.talaiot.metrics.base.ExecutedTasksMetric
-import com.cdsap.talaiot.metrics.base.GradleMetric
+import com.cdsap.talaiot.base.metrics.SimpleMetric
+import com.cdsap.talaiot.base.metrics.base.BuildResultMetric
+import com.cdsap.talaiot.base.metrics.base.ExecutedTasksMetric
+import com.cdsap.talaiot.base.metrics.base.GradleMetric
 import org.gradle.BuildResult
 import org.gradle.api.Project
 

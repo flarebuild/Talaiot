@@ -3,7 +3,7 @@ package com.cdsap.talaiot.publisher.pushgateway
 import com.cdsap.talaiot.base.entities.ExecutionReport
 import com.cdsap.talaiot.base.formatTagPublisher
 import com.cdsap.talaiot.base.metrics.DefaultBuildMetricsProvider
-import com.cdsap.talaiot.metrics.DefaultTaskDataProvider
+import com.cdsap.talaiot.base.metrics.DefaultTaskDataProvider
 
 /**
  * Formatter to format task and build execution data to Pushgateway metrics format.

@@ -57,7 +57,12 @@ class TalaiotListener(
     }
 
     override fun buildFinished(result: BuildResult) {
-        if (shouldPublish()) {
+        println(shouldPublish())
+        println(extension.ignoreWhen)
+        println(extension.ignoreWhen?.shouldIgnore())
+        println(talaiotTracker.isTracking)
+
+         if (shouldPublish()) {
             val end = System.currentTimeMillis()
             val logger = LogTrackerImpl(extension.logger)
             val executor = Executors.newSingleThreadExecutor()

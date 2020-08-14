@@ -1,6 +1,6 @@
-package com.cdsap.talaiot.metrics
+package com.cdsap.talaiot.base.metrics
 
-import com.cdsap.talaiot.metrics.base.CmdMetric
+import com.cdsap.talaiot.base.metrics.base.CmdMetric
 
 class GitBranchMetric: CmdMetric(
     cmd = "git rev-parse --abbrev-ref HEAD",

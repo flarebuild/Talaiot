@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.base.util
 
-import com.cdsap.talaiot.metrics.extensions.toBytes
+import com.cdsap.talaiot.base.metrics.extensions.toBytes
 import io.kotlintest.specs.BehaviorSpec
 
 

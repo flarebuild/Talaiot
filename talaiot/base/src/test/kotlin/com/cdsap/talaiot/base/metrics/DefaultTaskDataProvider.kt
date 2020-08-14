@@ -1,7 +1,6 @@
 package com.cdsap.talaiot.base.metrics
 
 import com.cdsap.talaiot.base.entities.*
-import com.cdsap.talaiot.metrics.DefaultTaskDataProvider
 import io.kotlintest.specs.BehaviorSpec
 
 class DefaultTaskMetricsProviderTest : BehaviorSpec({

@@ -5,7 +5,6 @@ import com.cdsap.talaiot.base.entities.Environment
 import com.cdsap.talaiot.base.entities.ExecutedGradleTaskInfo
 import com.cdsap.talaiot.base.entities.ExecutedTasksInfo
 import com.cdsap.talaiot.base.entities.ExecutionReport
-import com.cdsap.talaiot.metrics.CacheHitMetric
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.BehaviorSpec
 

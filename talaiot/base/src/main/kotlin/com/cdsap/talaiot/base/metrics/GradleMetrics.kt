@@ -1,10 +1,10 @@
-package com.cdsap.talaiot.metrics
+package com.cdsap.talaiot.base.metrics
 
 import com.cdsap.talaiot.base.entities.TaskName
 import com.cdsap.talaiot.base.util.TaskAbbreviationMatcher
-import com.cdsap.talaiot.metrics.base.GradleMetric
-import com.cdsap.talaiot.metrics.base.JvmArgsMetric
-import com.cdsap.talaiot.metrics.extensions.toBytes
+import com.cdsap.talaiot.base.metrics.base.GradleMetric
+import com.cdsap.talaiot.base.metrics.base.JvmArgsMetric
+import com.cdsap.talaiot.base.metrics.extensions.toBytes
 import org.gradle.api.internal.project.DefaultProject
 import org.gradle.api.internal.project.ProjectInternal
 import org.gradle.api.invocation.Gradle

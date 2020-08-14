@@ -1,8 +1,8 @@
-package com.cdsap.talaiot.metrics
+package com.cdsap.talaiot.base.metrics
 
 import com.cdsap.talaiot.base.entities.ExecutionReport
-import com.cdsap.talaiot.metrics.base.GradleMetric
-import com.cdsap.talaiot.metrics.base.Metric
+import com.cdsap.talaiot.base.metrics.base.GradleMetric
+import com.cdsap.talaiot.base.metrics.base.Metric
 import org.gradle.api.Project
 import org.gradle.api.internal.GradleInternal
 import org.gradle.internal.os.OperatingSystem

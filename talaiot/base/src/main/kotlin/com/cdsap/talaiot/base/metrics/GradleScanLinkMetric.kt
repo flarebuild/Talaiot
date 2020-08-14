@@ -1,6 +1,6 @@
-package com.cdsap.talaiot.metrics
+package com.cdsap.talaiot.base.metrics
 
-import com.cdsap.talaiot.metrics.base.BuildResultMetric
+import com.cdsap.talaiot.base.metrics.base.BuildResultMetric
 import org.gradle.api.internal.GradleInternal
 import org.gradle.internal.logging.LoggingManagerInternal
 import org.gradle.internal.logging.events.OutputEvent

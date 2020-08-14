@@ -3,7 +3,7 @@ import com.cdsap.talaiot.base.Publisher
 import com.cdsap.talaiot.base.entities.ExecutionReport
 import com.cdsap.talaiot.base.logger.LogTracker
 import com.cdsap.talaiot.base.metrics.DefaultBuildMetricsProvider
-import com.cdsap.talaiot.metrics.DefaultTaskDataProvider
+import com.cdsap.talaiot.base.metrics.DefaultTaskDataProvider
 import com.rethinkdb.RethinkDB
 import com.rethinkdb.net.Connection
 import java.net.URL

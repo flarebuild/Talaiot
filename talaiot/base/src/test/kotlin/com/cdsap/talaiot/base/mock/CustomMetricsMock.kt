@@ -1,7 +1,7 @@
 package com.cdsap.talaiot.base.mock
 
-import com.cdsap.talaiot.metrics.SimpleMetric
-import com.cdsap.talaiot.metrics.base.CmdMetric
+import com.cdsap.talaiot.base.metrics.SimpleMetric
+import com.cdsap.talaiot.base.metrics.base.CmdMetric
 
 class AdbVersionMetric : CmdMetric(
     cmd = "adb version",

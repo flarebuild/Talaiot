@@ -1,4 +1,4 @@
-package com.cdsap.talaiot.metrics.extensions
+package com.cdsap.talaiot.base.metrics.extensions
 
 import java.math.BigDecimal
 import java.util.regex.Pattern

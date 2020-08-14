@@ -1,0 +1,84 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.publisher",
+    "module": "elasticesearch-publisher",
+    "version": "elastic-search",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "rubg2f644jgxvh3aukjf7mxvv4"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "elasticesearch-publisher-elastic-search.jar",
+          "url": "elasticesearch-publisher-elastic-search.jar",
+          "size": 7497,
+          "sha512": "44bc96818e9fe3d1f91bd24beb211bddf4b8a17b3882ac8be55515e2c5a0993f07ad93e2a8aa2867ece40b295aaab0820fdc56e3a8b75fd769d39bfb661a8229",
+          "sha256": "f241baaaf94e3487ab6bafa9ec468dbc7304fe6a5441e7a12e07232f7649f8e4",
+          "sha1": "5bf193e5a8706ad883df0588a8a565089a925587",
+          "md5": "a64a26ad7a6ea449e3c9b5744bdaa3c5"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.3.72"
+          }
+        },
+        {
+          "group": "org.elasticsearch.client",
+          "module": "elasticsearch-rest-high-level-client",
+          "version": {
+            "requires": "7.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "elasticesearch-publisher-elastic-search.jar",
+          "url": "elasticesearch-publisher-elastic-search.jar",
+          "size": 7497,
+          "sha512": "44bc96818e9fe3d1f91bd24beb211bddf4b8a17b3882ac8be55515e2c5a0993f07ad93e2a8aa2867ece40b295aaab0820fdc56e3a8b75fd769d39bfb661a8229",
+          "sha256": "f241baaaf94e3487ab6bafa9ec468dbc7304fe6a5441e7a12e07232f7649f8e4",
+          "sha1": "5bf193e5a8706ad883df0588a8a565089a925587",
+          "md5": "a64a26ad7a6ea449e3c9b5744bdaa3c5"
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ executor: machine
 jobs:
   build:
     machine:
-      image: circleci/classic:latest
+        image: circleci/classic:latest
 
     working_directory: ~/repo
 

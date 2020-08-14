@@ -5,7 +5,7 @@ import com.cdsap.talaiot.base.Publisher
 import com.cdsap.talaiot.base.entities.ExecutionReport
 import com.cdsap.talaiot.base.logger.LogTracker
 import com.cdsap.talaiot.base.metrics.DefaultBuildMetricsProvider
-import com.cdsap.talaiot.metrics.DefaultTaskDataProvider
+import com.cdsap.talaiot.base.metrics.DefaultTaskDataProvider
 import org.apache.http.HttpHost
 import org.elasticsearch.action.index.IndexRequest
 import org.elasticsearch.client.RequestOptions

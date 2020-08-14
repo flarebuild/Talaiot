@@ -2,8 +2,8 @@ package com.cdsap.talaiot.base.configuration
 
 
 import com.cdsap.talaiot.base.entities.ExecutionReport
-import com.cdsap.talaiot.metrics.*
-import com.cdsap.talaiot.metrics.base.Metric
+import com.cdsap.talaiot.base.metrics.*
+import com.cdsap.talaiot.base.metrics.base.Metric
 
 /**
  * Configuration for the Metrics extensions

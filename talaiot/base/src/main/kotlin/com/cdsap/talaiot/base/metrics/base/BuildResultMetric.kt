@@ -1,4 +1,4 @@
-package com.cdsap.talaiot.metrics.base
+package com.cdsap.talaiot.base.metrics.base
 
 import com.cdsap.talaiot.base.entities.ExecutionReport
 import org.gradle.BuildResult

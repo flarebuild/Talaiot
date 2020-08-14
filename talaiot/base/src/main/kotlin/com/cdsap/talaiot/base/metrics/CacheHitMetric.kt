@@ -1,7 +1,7 @@
-package com.cdsap.talaiot.metrics
+package com.cdsap.talaiot.base.metrics
 
 import com.cdsap.talaiot.base.entities.CacheInfo
-import com.cdsap.talaiot.metrics.base.ExecutedTasksMetric
+import com.cdsap.talaiot.base.metrics.base.ExecutedTasksMetric
 
 class CacheHitMetric : ExecutedTasksMetric<BuildCacheUsageStats>(
     provider = { info ->
