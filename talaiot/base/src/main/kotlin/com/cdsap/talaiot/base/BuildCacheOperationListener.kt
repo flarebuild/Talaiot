@@ -1,4 +1,4 @@
-package com.cdsap.talaiot.base.listener
+package com.cdsap.talaiot.base
 
 import com.cdsap.talaiot.base.entities.CacheInfo
 import com.cdsap.talaiot.base.entities.ExecutedGradleTaskInfo
@@ -16,7 +16,6 @@ import org.gradle.internal.operations.OperationStartEvent
 class BuildCacheOperationListener : BuildOperationListener, Provider<ExecutedTasksInfo> {
     private val taskCacheDownloadResults = HashMap<OperationIdentifier, BuildCacheRemoteLoadBuildOperationType.Result>()
     private val tasksMap = HashMap<OperationIdentifier, TaskExecutionResults>()
-
     override fun get(): ExecutedTasksInfo {
         val tasksList = tasksMap.map { (taskIdentifier, executionResult) ->
             val isCacheEnabled = executionResult.result.cachingDisabledReasonCategory == null

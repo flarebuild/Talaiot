@@ -1,12 +1,14 @@
 package com.cdsap.talaiot.base
 
-import com.cdsap.talaiot.base.listener.BuildCacheOperationListener
 import com.cdsap.talaiot.base.extension.TalaiotExtension
-import com.cdsap.talaiot.base.gradle.GradleBuildOperationManager
 import com.cdsap.talaiot.base.listener.TalaiotListener
 import com.cdsap.talaiot.base.provider.PublisherConfigurationProvider
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.internal.GradleInternal
+import org.gradle.api.invocation.Gradle
+import org.gradle.internal.operations.BuildOperationListenerManager
+
 /**
  * Talaiot main [Plugin].
  *
@@ -22,7 +24,7 @@ import org.gradle.api.Project
  */
 class Talaiot <T : TalaiotExtension>(
     private val classExtension: Class<T>,
-    private val pro: PublisherConfigurationProvider
+    private val publisherConfigurationProvider: PublisherConfigurationProvider
 )  {
     /**
      * Initialization of the plugin. The plugin needs to receive callbacks
@@ -37,19 +39,21 @@ class Talaiot <T : TalaiotExtension>(
 
     fun setUpPlugin(target: Project) {
         val extension = target.extensions.create("talaiot", classExtension, target)
-        println("1")
         val buildOperationListener = BuildCacheOperationListener()
-        println("2")
         val listener = TalaiotListener(
             target,
             extension,
             buildOperationListener,
-            pro
+            publisherConfigurationProvider
         )
-        println("#")
         target.gradle.addBuildListener(listener)
-        GradleBuildOperationManager()
-            .initOperationListener(target, buildOperationListener)
+        target.gradle.buildOperationListenerManager().addListener(buildOperationListener)
+        target.gradle.buildFinished {
+            target.gradle.buildOperationListenerManager().removeListener(buildOperationListener)
+        }
+
     }
 
+    private fun Gradle.buildOperationListenerManager(): BuildOperationListenerManager =
+        (this as GradleInternal).services[BuildOperationListenerManager::class.java]
 }

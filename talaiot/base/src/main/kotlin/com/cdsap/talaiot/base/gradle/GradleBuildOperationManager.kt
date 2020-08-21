@@ -1,6 +1,6 @@
 package com.cdsap.talaiot.base.gradle
 
-import com.cdsap.talaiot.base.listener.BuildCacheOperationListener
+import com.cdsap.talaiot.base.BuildCacheOperationListener
 import org.gradle.api.Project
 import org.gradle.api.internal.GradleInternal
 import org.gradle.api.invocation.Gradle

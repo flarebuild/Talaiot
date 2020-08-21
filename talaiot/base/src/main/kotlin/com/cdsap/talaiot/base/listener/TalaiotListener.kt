@@ -5,12 +5,11 @@ import com.cdsap.talaiot.base.entities.NodeArgument
 import com.cdsap.talaiot.base.entities.TaskName
 import com.cdsap.talaiot.base.extension.TalaiotExtension
 import com.cdsap.talaiot.base.logger.LogTrackerImpl
-import com.cdsap.talaiot.base.util.TaskAbbreviationMatcher
 import com.cdsap.talaiot.base.provider.MetricsProvider
-import com.cdsap.talaiot.base.provider.Provider
 import com.cdsap.talaiot.base.provider.PublisherConfigurationProvider
 import com.cdsap.talaiot.base.publisher.TalaiotPublisherImpl
 import com.cdsap.talaiot.base.tracker.TalaiotTracker
+import com.cdsap.talaiot.base.util.TaskAbbreviationMatcher
 import org.gradle.BuildListener
 import org.gradle.BuildResult
 import org.gradle.api.Project
@@ -19,6 +18,7 @@ import org.gradle.api.execution.TaskExecutionListener
 import org.gradle.api.initialization.Settings
 import org.gradle.api.internal.GradleInternal
 import org.gradle.api.invocation.Gradle
+import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.TaskState
 import org.gradle.internal.scan.time.BuildScanBuildStartedTime
 import org.gradle.internal.work.WorkerLeaseService
@@ -57,12 +57,7 @@ class TalaiotListener(
     }
 
     override fun buildFinished(result: BuildResult) {
-        println(shouldPublish())
-        println(extension.ignoreWhen)
-        println(extension.ignoreWhen?.shouldIgnore())
-        println(talaiotTracker.isTracking)
-
-         if (shouldPublish()) {
+        if (shouldPublish()) {
             val end = System.currentTimeMillis()
             val logger = LogTrackerImpl(extension.logger)
             val executor = Executors.newSingleThreadExecutor()
@@ -72,11 +67,7 @@ class TalaiotListener(
             TalaiotPublisherImpl(
                 extension,
                 logger,
-                MetricsProvider(
-                    project,
-                    result,
-                    executedTasksInfo
-                ),
+                MetricsProvider(project, result, executedTasksInfo),
                 publisherConfigurationProvider,
                 executedTasksInfo
             ).publish(
@@ -114,25 +105,26 @@ class TalaiotListener(
 
     override fun projectsEvaluated(gradle: Gradle) {
         start = assignBuildStarted(gradle)
-
         configurationEnd = System.currentTimeMillis()
-        gradle.gradle.taskGraph.addTaskExecutionGraphListener {
-            val executedTasks = gradle.taskGraph.allTasks.map { TaskName(name = it.name, path = it.path) }
-            val taskAbbreviationMatcher = TaskAbbreviationMatcher(executedTasks)
-            gradle.startParameter.taskRequests.forEach {
-                it.args.forEach { task ->
-                    talaiotTracker.queue.add(
-                        NodeArgument(
-                            taskAbbreviationMatcher.findRequestedTask(task),
-                            0,
-                            0
-                        )
-                    )
-                }
+        if(gradle.startParameter.isConfigureOnDemand){
+            initQueue(gradle)
+        } else {
+            gradle.gradle.taskGraph.addTaskExecutionGraphListener {
+                initQueue(gradle)
             }
-            if (talaiotTracker.queue.isNotEmpty()) {
-                talaiotTracker.initNodeArgument()
+        }
+    }
+
+    private fun initQueue(gradle: Gradle) {
+        val executedTasks = gradle.taskGraph.allTasks.map { TaskName(name = it.name, path = it.path) }
+        val taskAbbreviationMatcher = TaskAbbreviationMatcher(executedTasks)
+        gradle.startParameter.taskRequests.forEach {
+            it.args.forEach { task ->
+                talaiotTracker.queue.add(NodeArgument(taskAbbreviationMatcher.findRequestedTask(task), 0, 0))
             }
+        }
+        if (talaiotTracker.queue.isNotEmpty()) {
+            talaiotTracker.initNodeArgument()
         }
     }
 
