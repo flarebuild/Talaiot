@@ -12,6 +12,7 @@ import org.gradle.plugin.devel.GradlePluginDevelopmentExtension
 import org.gradle.testing.jacoco.tasks.JacocoReport
 
 import java.io.File
+import java.net.URI
 
 
 class TalaiotPlugin : Plugin<Project> {
@@ -54,7 +55,7 @@ class TalaiotPlugin : Plugin<Project> {
                 useJUnitPlatform { }
             }
         }
-
+        target.version =  Versions.TALAIOT_VERSION
         target.afterEvaluate {
             collectUnitTest()
             configGradlePlugin(target)
@@ -64,10 +65,21 @@ class TalaiotPlugin : Plugin<Project> {
 
     private fun configPublishing(target: Project) {
         target.configure<PublishingExtension> {
-            publications {
-                create<MavenPublication>("maven2") {
-                    val extension = target.extensions.getByType<TalaiotPluginExtension>()
+            repositories {
+                maven {
+                    name = "Snapshots"
+                    url = URI("http://oss.jfrog.org/artifactory/oss-snapshot-local")
 
+                    credentials {
+                        username = "cdsap"
+                        password = "b6ee712c4a280021dadfd838651f63d77ac88221"
+                    }
+                }
+            }
+            target.group = "com.cdsap.talaiot.plugin"
+            publications {
+                create<MavenPublication>("maven") {
+                    val extension = target.extensions.getByType<TalaiotPluginExtension>()
                     groupId = extension.group
                     artifactId = extension.artifact
                     version = Versions.TALAIOT_VERSION

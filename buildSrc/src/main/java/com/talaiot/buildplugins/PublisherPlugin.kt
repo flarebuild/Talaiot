@@ -17,7 +17,7 @@ class PublisherPlugin : Plugin<Project> {
 
         target
             .extensions
-            .create<PublisherExtension>("publisher")
+            .create<PublisherPluginExtension>("publisher")
 
         target.plugins.apply("maven-publish")
         target.plugins.apply("kotlin")
@@ -36,7 +36,6 @@ class PublisherPlugin : Plugin<Project> {
             add("testImplementation", "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1")
             add("testImplementation", project(":talaiot:test-utils"))
         }
-
 
         target.tasks.withType<JacocoReport> {
             reports {
@@ -70,16 +69,16 @@ class PublisherPlugin : Plugin<Project> {
                         url = URI("http://oss.jfrog.org/artifactory/oss-snapshot-local")
 
                         credentials {
-                            username = System.getenv("USERNAME_SNAPSHOT")
-                            password = System.getenv("PASSWORD_SNAPSHOT")
+                            username = "cdsap"
+                            password = "b6ee712c4a280021dadfd838651f63d77ac88221"
                         }
                     }
                 }
                 publications {
                     create<MavenPublication>("maven") {
-                        val extension = target.extensions.getByType<PublisherExtension>()
+                        val extension = target.extensions.getByType<PublisherPluginExtension>()
                         groupId = target.group.toString()
-                        version =  target.name
+                        version =  Versions.TALAIOT_VERSION
                         artifactId = extension.name
                         from(components["kotlin"])
                     }

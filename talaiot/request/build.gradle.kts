@@ -1,16 +1,10 @@
-import com.talaiot.buildplugins.collectUnitTest
-
 plugins {
-    java
-    kotlin("jvm")
+    id("corePlugin")
 }
 
-version = "0.0.7"
-
-repositories {
-    mavenCentral()
+core {
+    name = "request"
 }
-collectUnitTest()
 
 
 dependencies {

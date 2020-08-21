@@ -1,18 +1,12 @@
-import com.talaiot.buildplugins.collectUnitTest
 
 plugins {
-    `maven-publish`
-    `java-library`
+    id("corePlugin")
     `java-gradle-plugin`
-    kotlin("jvm")
 }
 
-collectUnitTest()
-
-repositories {
-    mavenCentral()
+core{
+    name = "base"
 }
-
 dependencies {
     implementation("com.github.oshi:oshi-core:3.13.3")
     implementation(kotlin("stdlib-jdk8"))
@@ -33,42 +27,5 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
-    }
-}
-tasks.withType<JacocoReport> {
-    reports {
-        xml.isEnabled = true
-        csv.isEnabled = true
-        html.isEnabled = true
-        html.destination = File("${rootProject.buildDir}/coverage")
-    }
-}
-
-apply {
-    val test by tasks.getting(Test::class) {
-        useJUnitPlatform { }
-    }
-}
-
-version = com.talaiot.buildplugins.Versions.TALAIOT_VERSION
-
-publishing {
-    repositories {
-        maven {
-            name = "Snapshots"
-            url = uri("http://oss.jfrog.org/artifactory/oss-snapshot-local")
-
-            credentials {
-                username = System.getenv("USERNAME_SNAPSHOT")
-                password = System.getenv("PASSWORD_SNAPSHOT")
-            }
-        }
-    }
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.cdsap.talaiot"
-            artifactId = "base"
-            from(components["kotlin"])
-        }
     }
 }
