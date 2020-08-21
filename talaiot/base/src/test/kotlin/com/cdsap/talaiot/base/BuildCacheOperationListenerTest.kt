@@ -3,7 +3,6 @@ package com.cdsap.talaiot.base
 import com.cdsap.talaiot.base.entities.CacheInfo
 import com.cdsap.talaiot.base.entities.ExecutedGradleTaskInfo
 import com.cdsap.talaiot.base.entities.ExecutedTasksInfo
-import com.cdsap.talaiot.base.listener.BuildCacheOperationListener
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.BehaviorSpec
 import org.gradle.api.internal.tasks.execution.ExecuteTaskBuildOperationType
