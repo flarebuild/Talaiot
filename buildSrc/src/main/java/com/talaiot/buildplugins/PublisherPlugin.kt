@@ -29,12 +29,12 @@ class PublisherPlugin : Plugin<Project> {
         }
 
         target.dependencies {
-            add("implementation", project(":talaiot:base"))
+            add("implementation", project(":library:talaiot:base"))
             add("implementation", "org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
             add("testImplementation", "junit:junit:4.12")
             add("testImplementation", "io.kotlintest:kotlintest-runner-junit5:3.3.2")
             add("testImplementation", "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1")
-            add("testImplementation", project(":talaiot:test-utils"))
+            add("testImplementation", project(":library:talaiot:test-utils"))
         }
 
         target.tasks.withType<JacocoReport> {
@@ -69,8 +69,8 @@ class PublisherPlugin : Plugin<Project> {
                         url = URI("http://oss.jfrog.org/artifactory/oss-snapshot-local")
 
                         credentials {
-                            username = "cdsap"
-                            password = "b6ee712c4a280021dadfd838651f63d77ac88221"
+                            username = System.getenv("USERNAME_SNAPSHOT")
+                            password = System.getenv("PASSWORD_SNAPSHOT")
                         }
                     }
                 }

@@ -1,0 +1,119 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap",
+    "module": "talaiot",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "talaiot-1.4.0-SNAPSHOT.jar",
+          "url": "talaiot-1.4.0-SNAPSHOT.jar",
+          "size": 9998,
+          "sha512": "4c0a03dd36ae5c50c057024ea1a3b0ad7c566c58fc529a5f3498ee774893ab1befee30ea8ef34a2965e2597bfc4617be1122a9ac638b83f2ddd990b93a55771b",
+          "sha256": "8e7110b62fef81772948e2fed162f503238504ebe718a468ef9230f03bef692a",
+          "sha1": "9a627f3ac9de529c23a519574082f0e02abc2e94",
+          "md5": "a7d42e093c873bd28cfde6da24525624"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "base-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "elasticesearch-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "graph-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "influxdb-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "push-gateway-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "rethinkdb-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "hybrid-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "talaiot-1.4.0-SNAPSHOT.jar",
+          "url": "talaiot-1.4.0-SNAPSHOT.jar",
+          "size": 9998,
+          "sha512": "4c0a03dd36ae5c50c057024ea1a3b0ad7c566c58fc529a5f3498ee774893ab1befee30ea8ef34a2965e2597bfc4617be1122a9ac638b83f2ddd990b93a55771b",
+          "sha256": "8e7110b62fef81772948e2fed162f503238504ebe718a468ef9230f03bef692a",
+          "sha1": "9a627f3ac9de529c23a519574082f0e02abc2e94",
+          "md5": "a7d42e093c873bd28cfde6da24525624"
+        }
+      ]
+    }
+  ]
+}

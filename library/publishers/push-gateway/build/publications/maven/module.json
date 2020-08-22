@@ -1,0 +1,93 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.publisher",
+    "module": "push-gateway-publisher",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "request",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "push-gateway-publisher-1.4.0-SNAPSHOT.jar",
+          "url": "push-gateway-publisher-1.4.0-SNAPSHOT.jar",
+          "size": 10325,
+          "sha512": "c6ec00166137923af677de4853837693f241d9fd80c7ae828c5963b2db03764e5bf8cf78564f76b17e351091b870eab459ebd8d4ec8b88d4dad5ff99d68ac2ce",
+          "sha256": "734e181d27bffa06130dc4508ff38494049d045ea2bc6422f8bb3ce47a0f6d3b",
+          "sha1": "dd874e6eab6e18afbd568c38afd08bacde12cc16",
+          "md5": "2213c7a0bd8e4da33d0dcf4f32ec2506"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.3.72"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "request",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "push-gateway-publisher-1.4.0-SNAPSHOT.jar",
+          "url": "push-gateway-publisher-1.4.0-SNAPSHOT.jar",
+          "size": 10325,
+          "sha512": "c6ec00166137923af677de4853837693f241d9fd80c7ae828c5963b2db03764e5bf8cf78564f76b17e351091b870eab459ebd8d4ec8b88d4dad5ff99d68ac2ce",
+          "sha256": "734e181d27bffa06130dc4508ff38494049d045ea2bc6422f8bb3ce47a0f6d3b",
+          "sha1": "dd874e6eab6e18afbd568c38afd08bacde12cc16",
+          "md5": "2213c7a0bd8e4da33d0dcf4f32ec2506"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.plugin",
+    "module": "rethinkdb",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "rethinkdb-1.4.0-SNAPSHOT.jar",
+          "url": "rethinkdb-1.4.0-SNAPSHOT.jar",
+          "size": 7260,
+          "sha512": "ea234d2ec5570d46e867f3daebf458d28c58f3321f3f7f1f4776a3b1933ac5cd4052f459c54606e6a2ce3773ecbffaa0a8bb05d21ff705a2578207b655e7d492",
+          "sha256": "ef816e6cd31ecb4aae306d68aa0baa7f3ac9b904c79ddc3a38fab00580faa0bd",
+          "sha1": "7e592a2a9f19cdf7a43970e39fb2fc721a8f4964",
+          "md5": "4ac628f40570bdad57ede53621dab945"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "rethinkdb-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "rethinkdb-1.4.0-SNAPSHOT.jar",
+          "url": "rethinkdb-1.4.0-SNAPSHOT.jar",
+          "size": 7260,
+          "sha512": "ea234d2ec5570d46e867f3daebf458d28c58f3321f3f7f1f4776a3b1933ac5cd4052f459c54606e6a2ce3773ecbffaa0a8bb05d21ff705a2578207b655e7d492",
+          "sha256": "ef816e6cd31ecb4aae306d68aa0baa7f3ac9b904c79ddc3a38fab00580faa0bd",
+          "sha1": "7e592a2a9f19cdf7a43970e39fb2fc721a8f4964",
+          "md5": "4ac628f40570bdad57ede53621dab945"
+        }
+      ]
+    }
+  ]
+}

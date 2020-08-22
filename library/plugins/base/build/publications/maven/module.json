@@ -1,0 +1,77 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.plugin",
+    "module": "base",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "6rjxcm4scjfmbmyzswqsleehta"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "base-1.4.0-SNAPSHOT.jar",
+          "url": "base-1.4.0-SNAPSHOT.jar",
+          "size": 7361,
+          "sha512": "cb89d7fb4d03e24325dfd27450100caa8dd1d381053a6566613710541b04929a73e049ba2fd32761cb9881f079d6fa245108305f676d4ac4fc70aafe07b562a5",
+          "sha256": "e9ff6137b027cb2b415342b12202df6e29dac85feb63c49443cc0a5913a66245",
+          "sha1": "5c5cd637a56371cafd2c0912bffb4839e128bc76",
+          "md5": "9d2c7541ced0f40273fbc27d3d55b3d1"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "base-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "base-1.4.0-SNAPSHOT.jar",
+          "url": "base-1.4.0-SNAPSHOT.jar",
+          "size": 7361,
+          "sha512": "cb89d7fb4d03e24325dfd27450100caa8dd1d381053a6566613710541b04929a73e049ba2fd32761cb9881f079d6fa245108305f676d4ac4fc70aafe07b562a5",
+          "sha256": "e9ff6137b027cb2b415342b12202df6e29dac85feb63c49443cc0a5913a66245",
+          "sha1": "5c5cd637a56371cafd2c0912bffb4839e128bc76",
+          "md5": "9d2c7541ced0f40273fbc27d3d55b3d1"
+        }
+      ]
+    }
+  ]
+}

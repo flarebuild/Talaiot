@@ -1,0 +1,77 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.plugin",
+    "module": "pushgateway",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "pushgateway-1.4.0-SNAPSHOT.jar",
+          "url": "pushgateway-1.4.0-SNAPSHOT.jar",
+          "size": 7429,
+          "sha512": "8501b8676f10316fa04116aa8c55f8d5850b174f7ef12c973478887c27e57103babd7c3dca156e0874fbd9a2f0c092eedca73eba626002d97674e2036e426304",
+          "sha256": "ba4ede60b1ca819d8bd636f9f5d46fdd3ead54f49fa56b1f30a2d9e4e93540b4",
+          "sha1": "b037f1e76a5c4208576a968efd2704124a98cb30",
+          "md5": "01f6a2b89ddb21689717551804e6ebfc"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "push-gateway-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pushgateway-1.4.0-SNAPSHOT.jar",
+          "url": "pushgateway-1.4.0-SNAPSHOT.jar",
+          "size": 7429,
+          "sha512": "8501b8676f10316fa04116aa8c55f8d5850b174f7ef12c973478887c27e57103babd7c3dca156e0874fbd9a2f0c092eedca73eba626002d97674e2036e426304",
+          "sha256": "ba4ede60b1ca819d8bd636f9f5d46fdd3ead54f49fa56b1f30a2d9e4e93540b4",
+          "sha1": "b037f1e76a5c4208576a968efd2704124a98cb30",
+          "md5": "01f6a2b89ddb21689717551804e6ebfc"
+        }
+      ]
+    }
+  ]
+}

@@ -54,8 +54,8 @@ class CorePlugin : Plugin<Project> {
                     url = URI("http://oss.jfrog.org/artifactory/oss-snapshot-local")
 
                     credentials {
-                        username = "cdsap"
-                        password = "b6ee712c4a280021dadfd838651f63d77ac88221"
+                        username = System.getenv("USERNAME_SNAPSHOT")
+                        password = System.getenv("PASSWORD_SNAPSHOT")
                     }
                 }
             }

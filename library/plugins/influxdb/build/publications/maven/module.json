@@ -1,0 +1,77 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.plugin",
+    "module": "influxdb",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "influxdb-1.4.0-SNAPSHOT.jar",
+          "url": "influxdb-1.4.0-SNAPSHOT.jar",
+          "size": 7197,
+          "sha512": "134b55e81f48600b91a12b1a7f42fb9028a01404e4f13908bd97a2782833e5d4ad0739de2f61adf77b4af5ca358699352a01ca82b170e11fa2a166deece940a1",
+          "sha256": "aa9689ccfd26f7cea2a69e5cae499059f7ce50d5a697771b0c98cfc70a4b2c7e",
+          "sha1": "d8742b2dad479a8c4e38a2a8cb54123f50e7e044",
+          "md5": "dbe8de70cc954ba3890509dccb82b164"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "influxdb-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "influxdb-1.4.0-SNAPSHOT.jar",
+          "url": "influxdb-1.4.0-SNAPSHOT.jar",
+          "size": 7197,
+          "sha512": "134b55e81f48600b91a12b1a7f42fb9028a01404e4f13908bd97a2782833e5d4ad0739de2f61adf77b4af5ca358699352a01ca82b170e11fa2a166deece940a1",
+          "sha256": "aa9689ccfd26f7cea2a69e5cae499059f7ce50d5a697771b0c98cfc70a4b2c7e",
+          "sha1": "d8742b2dad479a8c4e38a2a8cb54123f50e7e044",
+          "md5": "dbe8de70cc954ba3890509dccb82b164"
+        }
+      ]
+    }
+  ]
+}

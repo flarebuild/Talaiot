@@ -1,0 +1,84 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.publisher",
+    "module": "rethinkdb-publisher",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "rethinkdb-publisher-1.4.0-SNAPSHOT.jar",
+          "url": "rethinkdb-publisher-1.4.0-SNAPSHOT.jar",
+          "size": 8520,
+          "sha512": "adadf9ad2f5ed4a78025ef180dda6715e00d79323239d4b7869b8f9eed2cfa50c6d98c29423354f3fb917af5ebf2b46fff4e81b68f9803271ef305c91453a5cd",
+          "sha256": "1497733a6133c1b628d5b83d543d3af951c258c2aacbb014989ba5c3cec86d08",
+          "sha1": "4c4c1c8a1d4b19c3bbda8fcfd83df9dce1f81cec",
+          "md5": "7205e0b7ad6942ab78d6f1f266564807"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.3.72"
+          }
+        },
+        {
+          "group": "com.rethinkdb",
+          "module": "rethinkdb-driver",
+          "version": {
+            "requires": "2.3.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "rethinkdb-publisher-1.4.0-SNAPSHOT.jar",
+          "url": "rethinkdb-publisher-1.4.0-SNAPSHOT.jar",
+          "size": 8520,
+          "sha512": "adadf9ad2f5ed4a78025ef180dda6715e00d79323239d4b7869b8f9eed2cfa50c6d98c29423354f3fb917af5ebf2b46fff4e81b68f9803271ef305c91453a5cd",
+          "sha256": "1497733a6133c1b628d5b83d543d3af951c258c2aacbb014989ba5c3cec86d08",
+          "sha1": "4c4c1c8a1d4b19c3bbda8fcfd83df9dce1f81cec",
+          "md5": "7205e0b7ad6942ab78d6f1f266564807"
+        }
+      ]
+    }
+  ]
+}

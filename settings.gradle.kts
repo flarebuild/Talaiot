@@ -10,25 +10,25 @@ pluginManagement {
 
     }
 }
-include(":docs")
+include(":library:docs")
 
-include(":talaiot:base")
-include(":talaiot:request")
-include(":talaiot:test-utils")
+include(":library:talaiot:base")
+include(":library:talaiot:request")
+include(":library:talaiot:test-utils")
 
-include(":publishers:push-gateway")
-include(":publishers:rethinkdb")
-include(":publishers:elastic-search")
-include(":publishers:graph")
-include(":publishers:influxdb")
-include(":publishers:base")
-include(":publishers:hybrid")
+include(":library:publishers:push-gateway")
+include(":library:publishers:rethinkdb")
+include(":library:publishers:elastic-search")
+include(":library:publishers:graph")
+include(":library:publishers:influxdb")
+include(":library:publishers:base")
+include(":library:publishers:hybrid")
 
-include(":plugins:influxdb")
-include(":plugins:base")
-include(":plugins:elastic-search")
-include(":plugins:graph")
-include(":plugins:rethinkdb")
-include(":plugins:push-gateway")
-include(":plugins:talaiot")
+include(":library:plugins:influxdb")
+include(":library:plugins:base")
+include(":library:plugins:elastic-search")
+include(":library:plugins:graph")
+include(":library:plugins:rethinkdb")
+include(":library:plugins:push-gateway")
+include(":library:plugins:talaiot")
 

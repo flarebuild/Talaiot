@@ -1,0 +1,84 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.publisher",
+    "module": "base-publisher",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "-api",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "base-publisher-1.4.0-SNAPSHOT.jar",
+          "url": "base-publisher-1.4.0-SNAPSHOT.jar",
+          "size": 25476,
+          "sha512": "4396f63e9100ba6146f5912e1337253855941e728d9150e3683c0bfe9628ebb317d2c8732ed8c7917a5e73be1ba2155ad92650133d1590c6aa9257a55a2b0493",
+          "sha256": "3410c78c33ba2f2c0580e084cf44daa68620b73c8e47c43c9ef155edf0e9311f",
+          "sha1": "8df8a3de73904cadbb7346528a6216d00be5a0ba",
+          "md5": "f25b35584aa6640b32545d2d8d37a74d"
+        }
+      ]
+    },
+    {
+      "name": "-runtime",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.3.72"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.5"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "base-publisher-1.4.0-SNAPSHOT.jar",
+          "url": "base-publisher-1.4.0-SNAPSHOT.jar",
+          "size": 25476,
+          "sha512": "4396f63e9100ba6146f5912e1337253855941e728d9150e3683c0bfe9628ebb317d2c8732ed8c7917a5e73be1ba2155ad92650133d1590c6aa9257a55a2b0493",
+          "sha256": "3410c78c33ba2f2c0580e084cf44daa68620b73c8e47c43c9ef155edf0e9311f",
+          "sha1": "8df8a3de73904cadbb7346528a6216d00be5a0ba",
+          "md5": "f25b35584aa6640b32545d2d8d37a74d"
+        }
+      ]
+    }
+  ]
+}

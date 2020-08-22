@@ -1,0 +1,81 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.cdsap.talaiot.plugin",
+    "module": "elastic-search",
+    "version": "1.4.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.4.1",
+      "buildId": "vx7itody2nenxjm4yr7fosdt5a"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "elastic-search-1.4.0-SNAPSHOT.jar",
+          "url": "elastic-search-1.4.0-SNAPSHOT.jar",
+          "size": 7342,
+          "sha512": "9250f5a10d14af8de18fd85b80002bd17688b8308e40fb48f12b8ce51315eabf1248917af6fd8cbe9fe9b7ef84381ac56627052458d3a45b864f466459f5d611",
+          "sha256": "0171f134baf2aac034f68c9d646a385715241d749a227960d4a011b416c6a278",
+          "sha1": "b7da8e77259bc487ed0b22bb0efca4d04ee1556a",
+          "md5": "3c7beaad93855726e9a8217d64d66519"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.cdsap.talaiot",
+          "module": "base",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.cdsap.talaiot.publisher",
+          "module": "elasticesearch-publisher",
+          "version": {
+            "requires": "1.4.0-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "elastic-search-1.4.0-SNAPSHOT.jar",
+          "url": "elastic-search-1.4.0-SNAPSHOT.jar",
+          "size": 7342,
+          "sha512": "9250f5a10d14af8de18fd85b80002bd17688b8308e40fb48f12b8ce51315eabf1248917af6fd8cbe9fe9b7ef84381ac56627052458d3a45b864f466459f5d611",
+          "sha256": "0171f134baf2aac034f68c9d646a385715241d749a227960d4a011b416c6a278",
+          "sha1": "b7da8e77259bc487ed0b22bb0efca4d04ee1556a",
+          "md5": "3c7beaad93855726e9a8217d64d66519"
+        }
+      ]
+    }
+  ]
+}
