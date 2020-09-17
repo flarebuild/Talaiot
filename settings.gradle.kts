@@ -1,3 +1,4 @@
+include(":sample2")
 include(":talaiot-legacy")
 pluginManagement {
     repositories {
