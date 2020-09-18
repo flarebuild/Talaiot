@@ -16,6 +16,7 @@ import org.apache.http.HttpHost
 import org.apache.http.util.EntityUtils
 import org.elasticsearch.client.ResponseException
 import org.elasticsearch.client.RestClient
+import org.testcontainers.elasticsearch.KElasticSearchContainer
 
 
 class ElasticSearchPublisherTest : BehaviorSpec() {
