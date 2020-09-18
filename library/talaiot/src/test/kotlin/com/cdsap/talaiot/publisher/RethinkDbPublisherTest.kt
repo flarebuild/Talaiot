@@ -16,6 +16,7 @@ import io.kotlintest.inspectors.forAtLeastOne
 import io.kotlintest.shouldThrow
 import io.kotlintest.specs.BehaviorSpec
 import junit.framework.Assert.assertTrue
+import org.testcontainers.rethinkdb.KRethinkDbContainer
 import java.net.URL
 
 class RethinkDbPublisherTest : BehaviorSpec() {

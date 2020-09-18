@@ -59,6 +59,13 @@ class TalaiotPlugin : Plugin<Project> {
 
 
         target.afterEvaluate {
+         //   target.plugins.apply("com.github.johnrengelman.shadow")
+            tasks {
+
+         //       withType<ShadowJar>().configureEach {
+           //         minimize()
+           //     }
+            }
             val extension = extensions.getByType<TalaiotPluginConfiguration>()
             setProjectVersion(extension.version)
             setProjectGroup(extension.group, Constants.DEFAULT_GROUP_PLUGIN)

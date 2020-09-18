@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
+   // implementation("com.github.jengelman.gradle.plugins:shadow:6.0.0")
     implementation("com.gradle.publish:plugin-publish-plugin:0.12.0")
     testImplementation("junit:junit:4.12")
 }

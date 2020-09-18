@@ -10,13 +10,13 @@ talaiotPlugin {
     artifact = "talaiot"
     group = "com.cdsap"
     mainClass = "com.cdsap.talaiot.legacy.TalaiotPlugin"
-    version = "1.3.70-SNAPSHOT"
+    version = "1.3.71-SNAPSHOT"
 }
 
 dependencies {
-    api(project(":library:talaiot"))
-    api(project(":library:talaiot-logger"))
-    api(project(":library:talaiot-request"))
+    implementation(project(":library:talaiot"))
+    implementation(project(":library:talaiot-logger"))
+    implementation(project(":library:talaiot-request"))
     implementation("guru.nidi:graphviz-java:0.8.3")
     implementation("org.influxdb:influxdb-java:2.19")
     implementation("com.github.oshi:oshi-core:3.13.3")

@@ -16,19 +16,12 @@ class TalaiotKotlinLibPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.plugins.apply("kotlin")
     //    target.plugins.apply("maven-publish")
-        target.plugins.apply("java-library")
+   //   target.plugins.apply("java-library")
         target.repositories {
             jcenter()
             mavenCentral()
         }
-        val javaComponent = target.components.findByName("java") as AdhocComponentWithVariants
-        javaComponent.addVariantsFromConfiguration(outgoing) {
-            // dependencies for this variant are considered runtime dependencies
-            mapToMavenScope("runtime")
-            // and also optional dependencies, because we don't want them to leak
-            mapToOptional()
-        }
-  //     target.setProjectVersion()
+  //       target.setProjectVersion()
     //    target.setProjectGroup(Constants.DEFAULT_GROUP_LIBRARY)
 
         target.afterEvaluate {

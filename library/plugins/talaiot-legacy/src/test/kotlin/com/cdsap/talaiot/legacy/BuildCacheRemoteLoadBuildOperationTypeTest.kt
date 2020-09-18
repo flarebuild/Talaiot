@@ -1,7 +1,7 @@
 package com.cdsap.talaiot.legacy
 
-import com.cdsap.talaiot.publisher.KRedisContainer
-import com.cdsap.talaiot.publisher.graphpublisher.KInfluxDBContainer
+import org.testcontainers.remotecache.KRedisContainer
+import org.testcontainers.influxdb.KInfluxDBContainer
 import com.cdsap.talaiot.utils.TemporaryFolder
 import io.kotlintest.Spec
 import io.kotlintest.specs.BehaviorSpec
@@ -143,7 +143,7 @@ object Configuration {
                 push = true
             }
         }
-        
+
     """.trimIndent()
 
     fun buildGradle(containerUrl: String) = """
@@ -151,18 +151,18 @@ object Configuration {
             id 'java'
             id 'com.cdsap.talaiot'
         }
-                 
+
         talaiot{
             publishers {
-                logger = com.cdsap.talaiot.logger.LogTracker.Mode.INFO                      
-                influxDbPublisher { 
+                logger = com.cdsap.talaiot.logger.LogTracker.Mode.INFO
+                influxDbPublisher {
                     dbName = "tracking"
                     url = "$containerUrl"
                     taskMetricName = "task"
                     buildMetricName = "build"
                 }
             }
-        }        
+        }
     """.trimIndent()
 
     fun createFile() = """
