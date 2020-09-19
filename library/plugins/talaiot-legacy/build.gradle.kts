@@ -10,7 +10,7 @@ talaiotPlugin {
     artifact = "talaiot"
     group = "com.cdsap"
     mainClass = "com.cdsap.talaiot.legacy.TalaiotPlugin"
-    version = "1.3.71-SNAPSHOT"
+    version = "1.3.73-SNAPSHOT"
 }
 
 dependencies {
@@ -29,19 +29,19 @@ dependencies {
 }
 
 
-tasks {
-    jar.configure {
-        configurations.runtimeClasspath.get().incoming.artifactView {
-            attributes.attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.CLASSES))
-        }.files.filter { it.isDirectory }
-                .forEach {
-                    println(it)
-                }
-
-
-        from(configurations.runtimeClasspath.get().incoming.artifactView {
-            attributes.attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.CLASSES))
-        }.files.filter { it.isDirectory })
-    }
-
-}
+//tasks {
+//    jar.configure {
+//        configurations.runtimeClasspath.get().incoming.artifactView {
+//            attributes.attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.CLASSES))
+//        }.files.filter { it.isDirectory }
+//                .forEach {
+//                    println(it)
+//                }
+//
+//
+//        from(configurations.runtimeClasspath.get().incoming.artifactView {
+//            attributes.attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.CLASSES))
+//        }.files.filter { it.isDirectory })
+//    }
+//
+//}

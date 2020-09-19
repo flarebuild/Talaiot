@@ -14,26 +14,6 @@ fun Project.setUpPublishing(
     namePublication: String,
     configurationArtifactId: String?
 ) {
-    val a = this.tasks.getByName("jar") as Jar
-//    a.configure<Jar> {
-//        from(configurations.getByName("runtimeClasspath").incoming.artifactView {
-//            attributes.attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.CLASSES))
-//        }.files.filter { it.isDirectory })
-
-
-
-//        configure<Javadoc>{
-//           classpath = configurations.getByName("runtimeClasspath")
-//            // Be lenient as third party dependencies to not offer their source code in a folder (and we do now want to include these in our Javadoc)
-//            source(sourcesPath.incoming.artifactView { lenient(true) }.files)
-//        }
-//        named<Jar>("sourcesJar").configure {
-//            // Be lenient as third party dependencies to not offer their source code in a folder (and we do not want to package it)
-//            from(sourcesPath.incoming.artifactView { lenient(true) }.files)
-//        }files
-  //  }
-
-
 
     this.configure<PublishingExtension> {
         repositories {

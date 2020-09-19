@@ -2,8 +2,8 @@ package com.talaiot.buildplugins
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.component.AdhocComponentWithVariants
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.project
 import org.gradle.kotlin.dsl.repositories
 
 /**
@@ -15,18 +15,18 @@ class TalaiotKotlinLibPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.plugins.apply("kotlin")
-    //    target.plugins.apply("maven-publish")
-   //   target.plugins.apply("java-library")
+        target.plugins.apply("maven-publish")
+        target.plugins.apply("java-library")
         target.repositories {
             jcenter()
             mavenCentral()
         }
-  //       target.setProjectVersion()
-    //    target.setProjectGroup(Constants.DEFAULT_GROUP_LIBRARY)
+        target.setProjectVersion()
+        target.setProjectGroup(Constants.DEFAULT_GROUP_LIBRARY)
 
         target.afterEvaluate {
             collectUnitTest()
-     //       setUpPublishing("mavenTalaiotLib", null)
+            setUpPublishing("mavenTalaiotLib", null)
         }
 
         target.dependencies {
