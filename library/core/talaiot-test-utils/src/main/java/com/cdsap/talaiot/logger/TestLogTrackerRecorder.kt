@@ -1,7 +1,5 @@
 package com.cdsap.talaiot.logger
 
-import com.cdsap.talaiot.logger.LogTracker
-
 object TestLogTrackerRecorder : LogTracker {
 
 

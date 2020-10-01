@@ -12,7 +12,7 @@ talaiotPlugin {
 }
 
 dependencies {
-    implementation(project(":library:talaiot"))
+    implementation(project(":library:core:talaiot"))
     implementation(project(":library:plugins:base:publisher"))
     implementation("guru.nidi:graphviz-java:0.8.3")
     implementation("org.influxdb:influxdb-java:2.19")
@@ -22,5 +22,5 @@ dependencies {
     implementation("com.rethinkdb:rethinkdb-driver:2.3.3")
     testImplementation(gradleTestKit())
     testImplementation("io.github.rybalkinsd:kohttp:0.10.0")
-    testImplementation(project(":library:talaiot-test-utils"))
+    testImplementation(project(":library:core:talaiot-test-utils"))
 }
