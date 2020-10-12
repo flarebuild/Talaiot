@@ -4,6 +4,7 @@ import com.cdsap.talaiot.configuration.*
 import com.cdsap.talaiot.publisher.OutputPublisherConfiguration
 import com.cdsap.talaiot.publisher.Publisher
 import com.cdsap.talaiot.publisher.hybrid.HybridPublisherConfiguration
+import com.cdsap.talaiot.publisher.influxdb.InfluxDbPublisherConfiguration
 
 
 import groovy.lang.Closure
